@@ -1,0 +1,45 @@
+{
+    "name": "joshrainwater/active-users",
+    "description": "A Laravel Package for easily retrieving a list of active users and guests that are currently online.",
+    "keywords": [
+    	"laravel",
+    	"php",
+    	"active uesrs",
+    	"online activity"
+    ],
+    "homepage": "https://github.com/joshrainwater/active-users",
+    "license": "MIT",
+    "type": "library",
+    "author": {
+        "name": "Josh Rainwater",
+        "email": "josh@jmrainwater.com",
+        "homepage": "http://jmrainwater.com"
+    },
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "5.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4",
+        "orchestra/testbench": "^3.5",
+        "fzaninotto/faker": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rainwater\\Active\\": "src/Active"
+        }
+    },
+    "autoload-dev": {
+    	"psr-4": {
+    		"Rainwater\\Active\\Tests\\": "tests/"
+    	}
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rainwater\\Active\\ActiveServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
