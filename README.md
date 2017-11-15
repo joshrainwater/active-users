@@ -10,7 +10,9 @@ Install via composer with:
 composer require joshrainwater/active-users
 ```
 
-### Session and Database Setup
+## Setup
+
+### Sessions and Database
 
 For now, this package only supports the 'database' type for session storage. Open your .env file and change the session driver to database:
 
@@ -24,6 +26,33 @@ and also make sure to publish the default session table with:
 php artisan session:table
 
 php artisan migrate
+```
+
+### Providers and Aliases
+
+In order to use the Active class, reference the full vendor namespace, or just import the class at the top of the file that you want to use it in. Eg:
+
+```
+\Rainwater\Active\Active::users();
+```
+
+or
+
+```
+use Rainwater\Active\Active;
+Active::users();
+```
+
+This package also includes a provider and alias to make things easier. To set those up properly, open `config/app.php` and add this to your providers array:
+
+```
+Rainwater\Active\ActiveServiceProvider::class
+```
+
+and this to your aliases array:
+
+```
+'Active' => Rainwater\Active\ActivityFacade::class
 ```
 
 ## Usage
