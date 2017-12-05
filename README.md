@@ -52,7 +52,7 @@ Rainwater\Active\ActiveServiceProvider::class
 and this to your aliases array:
 
 ```
-'Active' => Rainwater\Active\ActivityFacade::class
+'Active' => Rainwater\Active\ActiveFacade::class
 ```
 
 ## Usage
