@@ -1,4 +1,4 @@
-# A Laravel 5.5 Package for easily retrieving a list of active users and guests that are currently online.
+# A Laravel Package for easily retrieving a list of active users and guests that are currently online.
 
 This is a small, simple little package for seeing who's currently online.
 
