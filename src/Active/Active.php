@@ -19,6 +19,13 @@ class Active extends Model
      * @var string
      */
     protected $primaryKey = 'id';
+    
+    /**
+     * sessions do not use incremental ids, but unique strings as identifier.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
 
     /**
      * There are no timestamps.
