@@ -11,6 +11,10 @@ composer require joshrainwater/active-users
 ```
 
 ## Setup
+Publish the config file
+```
+php artisan vendor:publish --provider "Rainwater\Active\ActiveServiceProvider" --tag="config"
+```
 
 ### Sessions and Database
 

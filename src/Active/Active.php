@@ -11,7 +11,7 @@ class Active extends Model
      *
      * @var string
      */
-    protected $table = 'sessions';
+    protected $table;
 
     /**
      * The database key used by the model.
@@ -33,6 +33,11 @@ class Active extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    public function __construct()
+    {
+        $this->table = config('active_users.table_name');
+    }
 
     public function user()
     {
