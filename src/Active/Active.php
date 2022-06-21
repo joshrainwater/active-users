@@ -11,7 +11,7 @@ class Active extends Model
      *
      * @var string
      */
-    protected $table = 'sessions';
+    protected $table;
 
     /**
      * The database key used by the model.
@@ -34,9 +34,14 @@ class Active extends Model
      */
     public $timestamps = false;
 
+    public function __construct()
+    {
+        $this->table = config('active_users.table_name');
+    }
+
     public function user()
     {
-        return $this->belongsTo(config('auth.providers.users.model'));
+        return $this->belongsTo(config('auth.providers.users.model'),config('active_users.foreign_key'),config('active_users.user_key'));
     }
 
     public static function scopeUsers($query, $minutes = 5)

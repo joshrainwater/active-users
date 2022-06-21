@@ -13,6 +13,8 @@ class ActiveServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->registerPublishing();
+        $this->mergeConfigFrom(__DIR__ . '/../config/active_users.php', 'active_users');
     }
 
     /**
@@ -27,5 +29,20 @@ class ActiveServiceProvider extends ServiceProvider
         });
 
         $this->app->alias(Active::class, 'active-users');
+    }
+
+    /**
+     * Register the package's publishable resources.
+     *
+     * @return void
+     */
+    private function registerPublishing()
+    {
+        if ($this->app->runningInConsole()) {
+            // Lumen lacks a config_path() helper, so we use base_path()
+            $this->publishes([
+                __DIR__ . '/../config/active_users.php' => base_path('config/active_users.php'),
+            ], 'config');
+        }
     }
 }
