@@ -46,13 +46,13 @@ Active::users();
 This package also includes a provider and alias to make things easier. To set those up properly, open `config/app.php` and add this to your providers array:
 
 ```
-Rainwater\Active\ActiveServiceProvider::class
+Rainwater\Active\ActiveServiceProvider::class,
 ```
 
 and this to your aliases array:
 
 ```
-'Active' => Rainwater\Active\ActiveFacade::class
+'Active' => Rainwater\Active\ActiveFacade::class,
 ```
 
 ## Usage
